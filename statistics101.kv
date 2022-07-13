@@ -1,0 +1,182 @@
+<MyW>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'main.png'
+
+    Button:
+        id: btn
+        pos_hint: {'center_x': .275, 'center_y': .85}
+        size_hint: 0.06, 0.05
+        color: 1, 1, 1, 1
+        font_name: 'Comfortaa-Bold'
+        on_press: root.selector()
+        background_normal: 'start11.png'
+        background_down: 'statr22.png'
+        border: 0, 0, 0, 0
+
+    GridLayout:
+        id: mf
+        size_hint: 0.96, 0.5
+        spacing: 10, 0
+        pos_hint: {'center_x': 0.5, 'center_y': 0.53}
+
+    FloatLayout:
+        id: mf1
+        size_hint: 1, 1
+
+    Button:
+        id: text_border
+        background_normal: 'mid.png'
+        background_down: 'mid.png'
+        border: 0, 0, 0, 0
+        pos_hint: {'center_x': 0.1446, 'center_y': 0.85}
+        size_hint: 0.2, 0.03
+        on_release: box1.focus = True
+
+    Button:
+        id: text_top
+        background_normal: 'top.png'
+        background_down: 'top.png'
+        border: 0, 0, 0, 0
+        pos_hint: {'center_x': 0.1446, 'center_y': 0.8695}
+        size_hint: 0.2, 0.01
+        on_release: box1.focus = True
+
+    Button:
+        id: text_bot
+        background_normal: 'bot.png'
+        background_down: 'bot.png'
+        border: 0, 0, 0, 0
+        pos_hint: {'center_x': 0.1446, 'center_y': 0.8309}
+        size_hint: 0.2, 0.01
+        on_release: box1.focus = True
+
+    TextInput:
+        id: box1
+        on_focus: root.on_focus(box1.focus)
+        pos_hint: {'center_x': 0.145, 'center_y': 0.85}
+        size_hint: 0.18, 0.04
+        hint_text: 'Enter Your Data:'
+        selection_color: 1, 0, 1, 0.3
+        cursor_color: [1, 0, 1, 1]
+        font_name: 'Comfortaa-Bold'
+        background_color: 1, 1, 1, 0
+        write_tab: False
+
+    ToggleButton:
+        id: menu1
+        pos_hint: {'center_x': 0.95, 'center_y': 0.85}
+        size_hint: 0.03, 0.05
+        background_normal: 'Menubackwhite.png'
+        background_down: 'Menubackwhite.png'
+        border: 0, 0, 0, 0
+        on_press: root.opener() if self.state == 'down' else root.closer()
+
+    Image:
+        id: menu2
+        pos_hint: {'center_x': 0.95, 'center_y': 0.84}
+        size_hint: 0.02, 0.007
+        allow_stretch: True
+        keep_ratio: False
+        source: 'Menupop.png'
+
+    Image:
+        id: menu3
+        pos_hint: {'center_x': 0.95, 'center_y': 0.85}
+        size_hint: 0.02, 0.007
+        allow_stretch: True
+        keep_ratio: False
+        source: 'Menupop.png'
+
+    Image:
+        id: menu4
+        pos_hint: {'center_x': 0.95, 'center_y': 0.86}
+        size_hint: 0.02, 0.007
+        allow_stretch: True
+        keep_ratio: False
+        source: 'Menupop.png'
+
+    FloatLayout:
+        id: menu
+        visible: False
+        pos_hint: {'center_x': 0.837, 'center_y': 0.715}
+        size_hint_x: 0.2 if self.visible else 0
+        size_hint_y: 0.27
+
+    Button:
+        id: start_background
+        background_normal: '101-StartScreen/Backgroung.jpg'
+        background_down: '101-StartScreen/Backgroung.jpg'
+        border: 0, 0, 0, 0
+        size_hint: 1, 1
+        pos_hint: {'center_x': 0.5, 'top': 1}
+
+    Button:
+        id: bfx_btn
+        disabled: True
+        background_disabled_normal: '101-StartScreen/BFXlogoP.png'
+        background_normal: '101-StartScreen/BFXlogoW.png'
+        background_down: '101-StartScreen/BFXlogoW.png'
+        border: 0, 0, 0, 0
+        size_hint: 0.319, 0.27
+        pos_hint: {'center_x': 0.491, 'center_y': 0.463}
+        on_press: root.restart()
+
+    Image:
+        id: version
+        source: '101-StartScreen/Version0.9.png'
+        size_hint: 0.2, 0.3
+        pos_hint: {'center_x': 0.89, 'center_y': 0.05}
+
+    Image:
+        id: title
+        source: '101-StartScreen/HeaderName.png'
+        size_hint: 0.3, 0.1
+        pos_hint: {'center_x': 0.5, 'center_y': 0.95}
+
+    Image:
+        id: header_left
+        source: '101-StartScreen/HeaderLine.png'
+        allow_stretch: True
+        keep_ratio: False
+        pos_hint: {'center_x': 0.07, 'center_y': 0.945}
+        size_hint: 0.53, 0.01
+
+    Image:
+        id: header_right
+        source: '101-StartScreen/HeaderLine.png'
+        allow_stretch: True
+        keep_ratio: False
+        pos_hint: {'center_x': 0.93, 'center_y': 0.945}
+        size_hint: 0.53, 0.01
+
+    Button:
+        id: hoverer
+        background_normal: '101-StartScreen/StartHover.png'
+        background_down: '101-StartScreen/StartHover.png'
+        border: 0, 0, 0, 0
+        pos_hint: {'center_x': 0.57, 'center_y': 0.28}
+        size_hint: 0.15, 0.06
+        opacity: 0
+        on_press: root.start()
+
+    Button:
+        id: starter
+        background_normal: '101-StartScreen/StartBotton.png'
+        background_down: '101-StartScreen/StartHover.png'
+        border: 0, 0, 0, 0
+        pos_hint: {'center_x': 0.57, 'center_y': 0.28}
+        size_hint: 0.16, 0.07
+        on_press: root.start()
+
+    Image:
+        id: start_txt
+        source: '101-StartScreen/StartText.png'
+        size_hint: 0.13, 0.04
+        pos_hint: {'center_x': 0.57, 'center_y': 0.28}
+
+    FloatLayout:
+        id: floor_magnified
+        size_hint: 1, 1
